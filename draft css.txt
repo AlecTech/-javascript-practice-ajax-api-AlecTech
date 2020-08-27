@@ -1,0 +1,78 @@
+  
+  /*
+   * Let's initialize our grid!
+   */
+  
+  /*
+   * Much like flex, to have grid items / cells,
+   * you need to have a container with display: grid.
+   * The contents (direct descendents) will follow
+   * grid rules!
+   * ***We may be using body for this example...
+   * ***but you can put this on most anything!!!
+   */
+  
+  body {
+    display: grid;
+    /* Set widths for columns... */
+    /* Column 1: 25%; Column 2: 25%; Column 3: 50% */
+    grid-template-columns: 15% 75% 10%;
+    /* Set heights for rows... */
+
+  
+       
+    /*
+     * Using the "grid-area" names we define...
+     * We can write out where each one belongs!
+     * Remember to represent EACH column AND row for best results!
+     */
+    grid-template-areas:
+      "logo nav nav"
+      "li li li"
+      "footer footer footer";   
+  }
+  
+
+  
+  /* Name each section of our grid, so we can easily place our elements on it! */
+  .grid-container { grid-area: logo; }
+ 
+  nav { grid-area: nav; }
+
+  li{ grid-area: li; } 
+
+  footer{ grid-area: footer;}
+  /* stop HERE FIRST COMMIT
+  /* Tablet */
+    /* Column 1: 33%; Column 2: 33%; Column 3: 33% */
+  @media screen and ( min-width: 600px ) {
+    body { /* 3 columns; 8 rows. */
+      grid-template-columns: 
+      15%
+      75%
+      10%;
+
+  
+      /* Set up where the elements should fill for tablet... */
+      grid-template-areas:
+        "logo nav nav"
+        "li li li"
+        "footer footer footer";
+    }
+  }
+  /* stop HERE for 2nd commit tablet done
+  /* Large tablet; laptop / desktop. */
+  @media screen and ( min-width: 1024px ) {
+    body { /* 6 columns; 7 rows. */
+      grid-template-columns:
+      15%
+      75%
+      10%;
+    
+      /* Set up where the elements should fill for laptop / desktop... */
+      grid-template-areas:
+        "logo  nav   nav "
+        "li li li"
+        "footer footer footer";
+    }
+  }
